@@ -23,7 +23,7 @@ Before we get into running the script, there is a little bit of legwork that mus
 
   2) I've found the best way to capture all links is through the Alerts menu.  Click the bell icon and scroll down as far as you want to capture. (not too fast, you want to make sure all of the thumbnails load before scrolling further). Right-click anywhere in the window and select "Inspect Element".
 
-3) Find <div class="flex flex-col"> and below are all the links to your creation tasks. Right click <div class="flex flex-col"> and select Copy Element.
+  3) Find ```<div class="flex flex-col">``` and below are all the links to your creation tasks. Right click ```<div class="flex flex-col">``` and select Copy Element.
 
 Copy and paste to a text editor and save it as raw_scrape.txt. The links to your creations are now safe and sound from the evil clutches of OpenAI and you won't need to crawl through the alerts menu anymore. You can now run scripts.
 
@@ -31,7 +31,7 @@ The script is written in Python, and if you don't already have the Python interp
 
 SCRAPE.BAT
 ----------
-This is a clickable launcher that runs the script through the Python interpreter. It can be executed in a window or at a command prompt.
+This is a clickable launcher that runs the scraping script through the Python interpreter. It can be executed in a window or at a command prompt.
 
 The first thing the script will do is look at raw_scrape.txt which is full of useless garbage in poorly-formatted HTML.
 
@@ -52,4 +52,12 @@ After the process has completed, the script will check the files in the current 
 The script is set up to recognize and verify files as follows:
   -Links to tasks are in the format task_01kXYZxxxxxxxxxxx where XY can be considered the "Task Group".  Generally, media files associated with a task link will match these first two characters.  XYZ can be considered a "Media Set", as it will generally be common among files within a task.  
 
-  Once the script is completed, you can go back and address any failures manually.
+Once the script is completed, you can go back and address any ignored failures manually, or use the scan utility to create a list of failures based on successfully downloaded files.
+
+
+SCAN.BAT
+--------
+This is a clickable launcher that runs the file scan routine on all subdirectories of the current working folder.
+
+It uses the same criteria as the built-in task verifier in the scraper script, with the first two characters following the "_01k" designation being regarded as the "Task group" and the first three characters as a "Media Set".
+
