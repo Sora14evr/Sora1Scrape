@@ -1,6 +1,10 @@
 # Sora1Scrape
 A suite of utilities for grabbing the last of your Sora 1 creations before it's too late!
 
+TODO:
+-Scan, copy and compare links in each task to determine the layout and associated media set ID's for each task link.  
+-Add support for non-standard layouts
+
 In March, OpenAI announced the sunset of their Sora 1 platform.  At that point in time I had amassed 10's of thousands of generations and was NOT very good about downloading while I was creating and had a big problem to solve in a short amount of time.
 
 OpenAI did not help us out a whole lot, promising a data export tool, which never happened, as well as a notification of the time window in which our creations would still be available, which also never happened.
